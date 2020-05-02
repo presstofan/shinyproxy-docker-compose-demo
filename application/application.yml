@@ -3,12 +3,12 @@ proxy:
   port: 8080 # use Port 8080 for ShinyProxy
   
   container-wait-time: 30000 # how long should we wait for the container to spin up (30s as default as this is enough for our Shiny apps)
-  heartbeat-rate: 10000 # the user's browser will sent a heartbeat call every heartbeat-rate milliseconds (10s as default)
+  heartbeat-rate: 10000 # the user's browser will send a heartbeat call every heartbeat-rate milliseconds (10s as default)
   heartbeat-timeout: 60000 # if the server does not receive a heartbeat for heartbeat-timeout milliseconds, the relevant proxy will be released (60s as default)
 
   usage-stats-url: {url_to_your_InfluxDB_instance}:8086/write?db=shinyproxy_usagestats # use InfluxDB to store usage statistics; can be in a different server
-  # usage-stats-username: xxxx # influxdb username
-  # usage-stats-password: xxxx # influxdb password
+  # usage-stats-username: xxxx # influxdb username if needed
+  # usage-stats-password: xxxx # influxdb password if needed
 
   #### OpenID Connect Authentication ####
   authentication: openid # use openid auth framework
